@@ -13,9 +13,6 @@ export default function ShowError({ message, setError }) {
                     Por favor intenta mas tarde </p>
                 <button className='mt-4 bg-green-500 px-8 py-2 rounded-md shadow-md cursor-pointer' onClick={() => { setError("") }}>OK</button>
 
-
-
-
             </div>
 
 

@@ -1,12 +1,49 @@
-# React + Vite
+# Todo List Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación frontend para gestionar tareas (Todo List).
 
-Currently, two official plugins are available:
+## Tecnologías usadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-## Expanding the ESLint configuration
+## Métodos y bibliotecas utilizadas
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React Router**: Para la navegación entre diferentes páginas de la aplicación.
+- **React Hooks**: Uso de hooks como `useState`, `useEffect` para el manejo del estado y efectos secundarios.
+- **useForm**: Para la gestión y validación de formularios.
+- **Axios** y **fetch**: Para realizar peticiones HTTP al backend.
+- **PropTypes**: Para la validación de tipos de propiedades en los componentes.
+- **SweetAlert2**: Para mostrar alertas y mensajes personalizados de manera elegante.
+- **Context API**: Para el manejo global del estado de la aplicación.
+- **CSS Modules**: Para el manejo de estilos de manera modular y aislada.
+
+## Instalación
+
+1. Clona el repositorio:
+    ```bash
+    git clone https://github.com/tu-usuario/Todo-list-frontend.git
+    cd Todo-list-frontend
+    ```
+
+2. Instala las dependencias:
+    ```bash
+    npm install
+    ```
+
+## Despliegue local
+
+Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
+La aplicación estará disponible en `http://localhost:5173` (o el puerto que indique la terminal).
+
+## Construcción para producción
+
+Para generar los archivos listos para producción:
+```bash
+npm run build
+```

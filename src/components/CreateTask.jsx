@@ -1,9 +1,10 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate, useOutletContext } from 'react-router'
+import Swal from 'sweetalert2';
 
 export default function CreateTask() {
-    const { setModal, refreshTasks } = useOutletContext(); 
+    const { setModal, refreshTasks } = useOutletContext();
     const navigate = useNavigate()
 
     const { register, handleSubmit, reset } = useForm({ defaultValues: { titulo: "", descripcion: "" } })
@@ -22,7 +23,14 @@ export default function CreateTask() {
             const data = await response.json()
             console.log(response.status)
             if (response.status === 200 || response.status === 201) {
-                alert("Tarea creada con éxito")  
+
+                Swal.fire({
+                    title: "Tarea creada con éxito!",
+                    icon: "success",
+                    draggable: true,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 reset()
                 setModal(false)
                 refreshTasks()
@@ -30,7 +38,11 @@ export default function CreateTask() {
 
             }
         } catch (error) {
-            console.error("Error creating task:", error)
+            Swal.fire({
+                title: "Ha ocurrido un error al crear la tarea",
+                icon: "error",
+                draggable: true
+            });
         }
     }
 
@@ -51,25 +63,25 @@ export default function CreateTask() {
                 </svg>
             </button>
 
-        <form className="w-full h-full flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit(onSubmit)}>
-            <h2 className="text-2xl font-bold">Create New Task</h2>
-            <input
-                type="text"
-                placeholder="Escriba el titulo de la tarea"
-                {...register("titulo", { required: true })}
-                className="border border-blue-500 h-7 w-[70%] rounded-md shadow-lg px-2"
-            />
-            <textarea
-                placeholder="Description"
-                {...register("descripcion", { required: true })}
-                className="border border-blue-500 h-20 w-[70%] rounded-md shadow-lg px-2"
-            ></textarea>
-            <button type="submit" className="bg-blue-500 px-4 py-2 rounded-md text-white">
-                Add Task
-            </button>
+            <form className="w-full h-full flex flex-col justify-center items-center gap-4" onSubmit={handleSubmit(onSubmit)}>
+                <h2 className="text-2xl font-bold">Create New Task</h2>
+                <input
+                    type="text"
+                    placeholder="Escriba el titulo de la tarea"
+                    {...register("titulo", { required: true })}
+                    className="border border-blue-500 h-7 w-[70%] rounded-md shadow-lg px-2"
+                />
+                <textarea
+                    placeholder="Description"
+                    {...register("descripcion", { required: true })}
+                    className="border border-blue-500 h-20 w-[70%] rounded-md shadow-lg px-2"
+                ></textarea>
+                <button type="submit" className="bg-blue-500 px-4 py-2 rounded-md text-white">
+                    Add Task
+                </button>
 
 
-        </form>
+            </form>
         </div>
     )
 }

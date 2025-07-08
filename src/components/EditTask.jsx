@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate, useOutletContext, useParams } from 'react-router'
+import Swal from 'sweetalert2'
 
 export default function EditTask() {
     const { id } = useParams()
@@ -40,10 +41,17 @@ export default function EditTask() {
                 },
                 body: JSON.stringify(request)
             })
-            // const data = await response.json()
+
             console.log(response.status)
             if (response.status === 200 || response.status === 201) {
-                alert("Tarea creada con éxito")
+
+                Swal.fire({
+                    title: "Tarea Actualizada con éxito!",
+                    icon: "success",
+                    draggable: true,
+                    showConfirmButton: false,
+                    timer: 1500
+                });
                 reset()
                 setModal(false)
                 refreshTasks()
@@ -51,7 +59,11 @@ export default function EditTask() {
 
             }
         } catch (error) {
-            console.error("Error creating task:", error)
+            Swal.fire({
+                title: "Ha ocurrido un error al actualizar la tarea",
+                icon: "error",
+                draggable: true
+            });
         }
     }
 

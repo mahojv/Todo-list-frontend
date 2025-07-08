@@ -6,11 +6,7 @@ import ShowError from './ShowError'
 
 export default function TaskList({tasks, setModal, refreshTasks }) {
 
-
-
-  
   return (
-
     <>
       <ul className="px-3 py-4 " id="taskList">
         {
@@ -28,14 +24,8 @@ export default function TaskList({tasks, setModal, refreshTasks }) {
             )
           })
         }
-
-
-
       </ul>
-
       {tasks.length === 0 && <ShowError message="No hay tareas disponibles" />}
-
     </>
-
   )
 }
