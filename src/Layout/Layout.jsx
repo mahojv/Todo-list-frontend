@@ -34,7 +34,7 @@ export default function Layout() {
                     <div className=' w-[70%] h-[300px] bg-white flex justify-center items-center mt-4 fixed bottom-1/3 left-1/2 -translate-x-1/2 rounded-md shadow-lg'>
 
                         <Outlet
-                        setModal={setModal}
+                        context={{ setModal }}
                         />
                     </div>
 

@@ -1,9 +1,9 @@
 import React from 'react'
-import { set, useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router'
+import { useForm } from 'react-hook-form'
+import { useNavigate, useOutletContext } from 'react-router'
 
-export default function CreateTask({ setModal }) {
-    
+export default function CreateTask() {
+    const { setModal } = useOutletContext(); 
     const navigate = useNavigate()
 
     const { register, handleSubmit, reset } = useForm({ defaultValues: { titulo: "", descripcion: "" } })
@@ -24,8 +24,8 @@ export default function CreateTask({ setModal }) {
             if (response.status === 200 || response.status === 201) {
                 alert("Tarea creada con éxito")  
                 reset()
-                navigate("/")
                 setModal(false)
+                navigate("/")
 
             }
         } catch (error) {
