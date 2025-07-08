@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
-body{
-    background-color: black;
+select {
+  border: 1px solid #3b82f6; /* Azul estilo Tailwind border-blue-500 */
+  border-radius: 6px;        /* Borde redondeado */
+  padding: 8px 12px;         /* Espaciado interior */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sombra ligera */
+  font-size: 16px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #2563eb;     /* Azul más intenso en foco */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3); /* Borde sombra azul */
+}
+
+.bg-gradi {
+    background-image: radial-gradient(circle, #87e1e7, #99e5e5, 
+    #aae8e4, #baece4, #c9efe6, #c3e8de, #bce0d5, #b6d9cd, 
+    #9ac6b7, #7eb3a2, #61a08d, #438e79);
 }

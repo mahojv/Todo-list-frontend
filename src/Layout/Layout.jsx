@@ -25,7 +25,7 @@ export default function Layout() {
 
     return (
         <>
-            <div className="w-full flex flex-col min-h-screen h-full bg-gray-200 py-8 px-5 text-[10px] max-w-xl mx-auto ">
+            <div className="w-full flex flex-col min-h-screen h-full bg-gradi py-8 px-5 text-[10px] max-w-xl mx-auto ">
                 <h1 className="text-center font-mono text-2xl"> TO DO APP</h1>
 
                 <div className="w-[90%] text-center  items-center px-8 border-b-1 border-gray-400 mx-auto py-4 mt-4" id="newTask">
@@ -43,7 +43,8 @@ export default function Layout() {
                     refreshTasks={getTasks}
                 />
                 {modal &&
-                    <div className=' w-[90%] h-[300px] bg-white flex justify-center items-center mt-4 fixed bottom-1/3 left-1/2 -translate-x-1/2 rounded-md shadow-lg'>
+                    <div className=' w-[90%] h-[300px] bg-white flex justify-center items-center mt-4 fixed 
+                    bottom-1/3 left-1/2 -translate-x-1/2 rounded-4xl shadow-lg'>
                         <Outlet
                             context={{ setModal, refreshTasks: getTasks }}
                         />
