@@ -24,7 +24,7 @@ Este proyecto es una aplicación frontend para gestionar tareas (Todo List).
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu-usuario/Todo-list-frontend.git
+    git clone https://github.com/mahojv/Todo-list-frontend.git
     cd Todo-list-frontend
     ```
 
