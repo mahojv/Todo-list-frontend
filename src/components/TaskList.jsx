@@ -12,7 +12,7 @@ export default function TaskList({tasks, setModal, refreshTasks }) {
   return (
 
     <>
-      <ul className="px-8 py-4" id="taskList">
+      <ul className="px-3 py-4 " id="taskList">
         {
           tasks.map((task) => {
 

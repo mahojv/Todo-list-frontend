@@ -44,11 +44,11 @@ export default function TaskItem({ task , setModal, refreshTasks }) {
 
 
   return (
-    <li className="flex justify-between pr-8 mb-1">
+    <li className="flex justify-between pl-2 py-5 pr-8 mb-3  rounded-sm shadow-lg  border-gray-300" id={id}>
       <label htmlFor={id} className={`flex gap-2 items-center    ${estado === true ? "line-through" : ""}  `} >
         <input type="checkbox" id={id} className="" checked={estado === true || estado === "true"} onChange={handleCheck} />
-        <p>{titulo}</p>
-        <p>{descripcion}</p>
+        <p className='w-[30%] border-r border-gray-300'>{titulo}</p>
+        <p className='w-[50%]'>{descripcion}</p>
       </label>
       <div className='flex gap-2 justify-between  items-center w-10 '>
         <Link className='cursor-pointer'
