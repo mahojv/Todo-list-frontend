@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import TaskItem from './TaskItem'
 import ShowError from './ShowError'
 
 
 
-export default function TaskList({ status }) {
+export default function TaskList(status) {
 
 
 
@@ -14,9 +14,9 @@ export default function TaskList({ status }) {
   async function getTasks() {
 
     try {
-      const url = `https://jsonplaceholder.typicode.com/users/1/todos${status}`
+      const url = `http://localhost:3000/tasks`
 
-      const response = await fetch(url)
+      const response = await fetch(url, { method: "GET" })
       const data = await response.json()
 
       setTasks(data)
@@ -27,11 +27,11 @@ export default function TaskList({ status }) {
 
     }
   }
+
   useEffect(() => {
     getTasks()
 
   }, [status])
-
 
   return (
 
@@ -46,18 +46,8 @@ export default function TaskList({ status }) {
               <TaskItem
                 task={task}
                 key={task.id}
-
-
               />
             )
-
-
-
-
-
-
-
-
           })
         }
 
