@@ -1,11 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import FilterNav from '../components/FilterNav'
 import TaskList from '../components/TaskList'
 import { Link, Outlet } from 'react-router'
 
 export default function Layout() {
     const [status, setStatus] = useState("")
-        const[modal, setModal] = useState(false)
+    const [modal, setModal] = useState(false)
+    const [tasks, setTasks] = useState([])
+
+    async function getTasks() {
+        try {
+            const url = `http://localhost:3000/tasks`
+            const response = await fetch(url)
+            const data = await response.json()
+            setTasks(data)
+        } catch (error) {
+            console.error("Error fetching tasks:", error)
+        }
+    }
+
+    useEffect(() => {
+        getTasks()
+    }, [status])
 
 
     return (
@@ -28,13 +44,15 @@ export default function Layout() {
                 </div>
 
                 <TaskList
-                    status={status}
+                    tasks={tasks}
+                    setModal={setModal}
+                    refreshTasks={getTasks}
                 />
                 {modal &&
                     <div className=' w-[70%] h-[300px] bg-white flex justify-center items-center mt-4 fixed bottom-1/3 left-1/2 -translate-x-1/2 rounded-md shadow-lg'>
 
                         <Outlet
-                        context={{ setModal }}
+                            context={{ setModal, refreshTasks: getTasks }}
                         />
                     </div>
 
