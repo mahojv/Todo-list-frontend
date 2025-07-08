@@ -8,6 +8,7 @@ Este proyecto es una aplicación frontend para gestionar tareas (Todo List).
 - [Vite](https://vitejs.dev/)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## Métodos y bibliotecas utilizadas
 
