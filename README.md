@@ -42,5 +42,5 @@ npm run dev
 ```
 La aplicación estará disponible en `http://localhost:5173` (o el puerto que indique la terminal).
 
-## Construcción para producción
+
 
