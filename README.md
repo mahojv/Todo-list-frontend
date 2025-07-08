@@ -43,7 +43,3 @@ La aplicación estará disponible en `http://localhost:5173` (o el puerto que in
 
 ## Construcción para producción
 
-Para generar los archivos listos para producción:
-```bash
-npm run build
-```
